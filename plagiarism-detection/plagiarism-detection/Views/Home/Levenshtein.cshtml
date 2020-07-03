@@ -1,0 +1,44 @@
+﻿@model TextModel
+@{
+    ViewData["Title"] = "Levenshtein Page";
+}
+    <div class="text-center">
+        <h1 class="display-4">Levenshtein Page</h1>
+        <table style="width:100%">
+            <tr>
+                <th>First Text</th>
+                <th>Second Text</th>
+            </tr>
+            <tr>
+                <td>
+                    <form asp-controller="Home" asp-action="UploadFile" method="post"
+                          enctype="multipart/form-data">
+
+                        <input type="file" name="file" />
+                        <button type="submit">Upload File</button>
+                    </form>
+                </td>
+                <td>
+                    <form asp-controller="Home" asp-action="UploadFile" method="post"
+                          enctype="multipart/form-data">
+
+                        <input type="file" name="file" />
+                        <button type="submit">Upload File</button>
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.TextAreaFor(model => model.Text, new { style = "width: 100%; height: 50%;", placeholder = "Type your text here..." })
+                </td>
+                <td>
+                    @Html.TextAreaFor(model => model.Text, new { style = "width: 100%; height: 50%;", placeholder = "Type your text here..." })
+                </td>
+            </tr>
+        </table>
+        
+
+        
+
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    </div>
